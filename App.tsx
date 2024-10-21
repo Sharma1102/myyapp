@@ -27,10 +27,10 @@
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import Home from './comp/Home'; // Your existing Home component
-import Registration from './comp/Registration'; // Your Registration component
-import Data from './comp/Data'; // Your Data component
-import Login from './comp/Login'; // The new Login component
+import Home from './component/Home'; // Your existing Home component
+import Registration from './component/Registration'; // Your Registration component
+import Data from './component/Data'; // Your Data component
+import Login from './component/Login'; // The new Login component
 import React from 'react';
 
 const Stack = createStackNavigator();

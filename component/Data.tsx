@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, StyleSheet, Button, FlatList, Alert, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, FlatList, Alert, TouchableOpacity } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import Button from './Button';
 
 const Data: React.FC<{ navigation: any }> = ({ navigation }) => {
   const [userData, setUserData] = useState<{ name: string; email: string; password: string; id: number }[]>([]);
