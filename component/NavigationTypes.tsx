@@ -1,5 +1,5 @@
-import Data from "./Data";
-import Registration from "./Registration";
+// import Data from "./Data";
+// import Registration from "./Registration";
 
 
 export type NavigationTypes = {

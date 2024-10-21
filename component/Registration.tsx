@@ -79,7 +79,7 @@ const Registration: React.FC<RegistrationProps> = ({navigation, route}) => {
 
         await AsyncStorage.setItem('userData', JSON.stringify(existingData));
         Alert.alert('Data saved successfully!');
-        navigation.navigate('Data');
+        navigation.navigate('Login');
       } catch (error) {
         console.error('Error saving data', error);
         Alert.alert('Failed to save data.');
