@@ -10,7 +10,7 @@ const Home = (props: { navigation: { navigate: (screen: string) => void; }; } ) 
         {/* <TouchableOpacity style={styles.navButton} onPress={() => props.navigation.navigate('Registration')}>
           <Text style={styles.navButtonText}>Registration</Text>
         </TouchableOpacity> */}
-        <RegistrationButton title='Refistration'  onPress={() => props.navigation.navigate('Registration')} />
+        <RegistrationButton title='Registration'  onPress={() => props.navigation.navigate('Registration')} />
         <TouchableOpacity style={styles.navButton} onPress={() => props.navigation.navigate('Data')}>
           <Text style={styles.navButtonText}>Data</Text>
         </TouchableOpacity>

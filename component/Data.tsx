@@ -57,7 +57,7 @@ const Data: React.FC<{ navigation: any }> = ({ navigation }) => {
       <Text style={styles.itemText}>Email: {item.email}</Text>
       <Text style={styles.itemText}>Password: {item.password}</Text>
       <View style={styles.buttonContainer}>
-        <View style={{backgroundColor :'blue'}}><Button title="Edit"  onPress={() => handleEdit(item)}  /></View>
+        <View style={ButtonStyle.editStyle}><Button title="Edit"  onPress={() => handleEdit(item)}  /></View>
         <View style={ButtonStyle.deleteStyle} ><Button title="Delete" onPress={() => handleDelete(item.id)} /></View>
       </View>
     </View>
@@ -75,10 +75,11 @@ const Data: React.FC<{ navigation: any }> = ({ navigation }) => {
       ) : (
         <Text>No data available.</Text>
       )}
-      <View>
-        <TouchableOpacity style={styles.backButton} onPress={() => navigation.goBack()}>
+      <View style={ButtonStyle.backButtonStyle}>
+        {/* <TouchableOpacity style={styles.backButton} onPress={() => navigation.goBack()}>
           <Text style={styles.backButtonText}>Back</Text>
-        </TouchableOpacity>
+        </TouchableOpacity> */}
+        <Button  title='Back' onPress={() => navigation.goBack()} />
       </View>
     </View>
   );
