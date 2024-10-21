@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, StyleSheet, Button, FlatList, Alert, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, FlatList, Alert, TouchableOpacity } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import Button from './Button';
+import ButtonStyle from '../styles/ButtonStyle';
 
 const Data: React.FC<{ navigation: any }> = ({ navigation }) => {
   const [userData, setUserData] = useState<{ name: string; email: string; password: string; id: number }[]>([]);
@@ -55,8 +57,8 @@ const Data: React.FC<{ navigation: any }> = ({ navigation }) => {
       <Text style={styles.itemText}>Email: {item.email}</Text>
       <Text style={styles.itemText}>Password: {item.password}</Text>
       <View style={styles.buttonContainer}>
-        <Button title="Edit" onPress={() => handleEdit(item)} />
-        <Button title="Delete" onPress={() => handleDelete(item.id)} />
+        <View style={{backgroundColor :'blue'}}><Button title="Edit"  onPress={() => handleEdit(item)}  /></View>
+        <View style={ButtonStyle.deleteStyle} ><Button title="Delete" onPress={() => handleDelete(item.id)} /></View>
       </View>
     </View>
   );
