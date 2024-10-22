@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, StyleSheet, FlatList, Alert, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, Button, FlatList, Alert, TouchableOpacity } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import Button from './Button';
-import ButtonStyle from '../styles/ButtonStyle';
 
 const Data: React.FC<{ navigation: any }> = ({ navigation }) => {
   const [userData, setUserData] = useState<{ name: string; email: string; password: string; id: number }[]>([]);
@@ -57,8 +55,8 @@ const Data: React.FC<{ navigation: any }> = ({ navigation }) => {
       <Text style={styles.itemText}>Email: {item.email}</Text>
       <Text style={styles.itemText}>Password: {item.password}</Text>
       <View style={styles.buttonContainer}>
-        <View style={ButtonStyle.editStyle}><Button title="Edit"  onPress={() => handleEdit(item)}  /></View>
-        <View style={ButtonStyle.deleteStyle} ><Button title="Delete" onPress={() => handleDelete(item.id)} /></View>
+        <Button title="Edit" onPress={() => handleEdit(item)} />
+        <Button title="Delete" onPress={() => handleDelete(item.id)} />
       </View>
     </View>
   );
@@ -75,11 +73,10 @@ const Data: React.FC<{ navigation: any }> = ({ navigation }) => {
       ) : (
         <Text>No data available.</Text>
       )}
-      <View style={ButtonStyle.backButtonStyle}>
-        {/* <TouchableOpacity style={styles.backButton} onPress={() => navigation.goBack()}>
+      <View>
+        <TouchableOpacity style={styles.backButton} onPress={() => navigation.goBack()}>
           <Text style={styles.backButtonText}>Back</Text>
-        </TouchableOpacity> */}
-        <Button  title='Back' onPress={() => navigation.goBack()} />
+        </TouchableOpacity>
       </View>
     </View>
   );
