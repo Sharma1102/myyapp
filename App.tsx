@@ -32,6 +32,7 @@ import Registration from './component/Registration'; // Your Registration compon
 import Data from './component/Data'; // Your Data component
 import Login from './component/Login'; // The new Login component
 import React from 'react';
+import AddUser from './component/AddUser';
 
 const Stack = createStackNavigator();
 
@@ -43,6 +44,7 @@ export default function App() {
         <Stack.Screen name="Registration" component={Registration} />
         <Stack.Screen name="Data" component={Data} />
         <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="AddUser" component={AddUser} />
       </Stack.Navigator>
     </NavigationContainer>
   );

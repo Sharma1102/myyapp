@@ -7,10 +7,8 @@ const Home = (props: { navigation: { navigate: (screen: string) => void; }; } ) 
     <View style={styles.container}>
       <Text style={styles.title}>Home Component</Text>
       <View style={styles.navbar}>
-        {/* <TouchableOpacity style={styles.navButton} onPress={() => props.navigation.navigate('Registration')}>
-          <Text style={styles.navButtonText}>Registration</Text>
-        </TouchableOpacity> */}
-        <RegistrationButton title='Registration'  onPress={() => props.navigation.navigate('Registration')} />
+        
+        <RegistrationButton title='Add Users'  onPress={() => props.navigation.navigate('AddUser')} />
         <TouchableOpacity style={styles.navButton} onPress={() => props.navigation.navigate('Data')}>
           <Text style={styles.navButtonText}>Data</Text>
         </TouchableOpacity>
