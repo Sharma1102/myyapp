@@ -3,12 +3,12 @@ import {
     View,
     TextInput,
     TouchableOpacity,
-    StyleSheet,
     Alert,
   } from 'react-native';
   import React, {useState, useEffect} from 'react';
   import AsyncStorage from '@react-native-async-storage/async-storage';
   import {NavigationProp} from '@react-navigation/native';
+import AddUserStyle from '../styles/AddUserStyle';
   
   interface RegistrationProps {
     navigation: NavigationProp<any>;
@@ -90,93 +90,51 @@ import {
     };
   
     return (
-      <View style={styles.container}>
-        <Text style={styles.title}>Register User</Text>
+      <View style={AddUserStyle.container}>
+        <Text style={AddUserStyle.title}>Register User</Text>
         <TextInput
-          style={styles.input}
+          style={AddUserStyle.input}
           placeholder="Name"
           value={name}
           onChangeText={setName}
         />
-        {errors.name && <Text style={styles.error}>{errors.name}</Text>}
+        {errors.name && <Text style={AddUserStyle.error}>{errors.name}</Text>}
   
         <TextInput
-          style={styles.input}
+          style={AddUserStyle.input}
           placeholder="Email"
           value={email}
           onChangeText={setEmail}
           keyboardType="email-address"
         />
-        {errors.email && <Text style={styles.error}>{errors.email}</Text>}
+        {errors.email && <Text style={AddUserStyle.error}>{errors.email}</Text>}
   
         <TextInput
-          style={styles.input}
+          style={AddUserStyle.input}
           placeholder="Password"
           value={password}
           onChangeText={setPassword}
           secureTextEntry
         />
-        {errors.password && <Text style={styles.error}>{errors.password}</Text>}
+        {errors.password && <Text style={AddUserStyle.error}>{errors.password}</Text>}
   
         <TouchableOpacity
-          style={styles.button}
+          style={AddUserStyle.button}
           disabled={!isFormValid}
           onPress={handleSubmit}>
-          <Text style={styles.buttonText}>Submit</Text>
+          <Text style={AddUserStyle.buttonText}>Submit</Text>
         </TouchableOpacity>
-        <View style={styles.backButtonContainer}>
+        <View style={AddUserStyle.backButtonContainer}>
           <TouchableOpacity
-            style={styles.backButton}
+            style={AddUserStyle.backButton}
             onPress={() => navigation.goBack()}>
-            <Text style={styles.backButtonText}>Back</Text>
+            <Text style={AddUserStyle.backButtonText}>Back</Text>
           </TouchableOpacity>
         </View>
       </View>
     );
   };
   
-  const styles = StyleSheet.create({
-    container: {padding: 40, backgroundColor: '#7d7d7d'},
-    input: {
-      height: 60,
-      borderColor: '#000000',
-      borderWidth: 1,
-      marginBottom: 12,
-      paddingHorizontal: 10,
-      borderRadius: 8,
-      fontSize: 16,
-      backgroundColor: '#d9d9d9',
-    },
-    title: {
-      fontSize: 24,
-      fontWeight: 'bold',
-      marginBottom: 20,
-      color: '#ffffff',
-    },
-    button: {
-      backgroundColor: '#555555',
-      borderColor: '#ffffff',
-      borderRadius: 5,
-      paddingVertical: 10,
-      alignItems: 'center',
-      marginTop: 16,
-      marginBottom: 12,
-    },
-    buttonText: {color: '#ffffff', fontWeight: 'bold', fontSize: 16},
-    error: {color: 'red', fontSize: 14, marginBottom: 12},
-    backButtonContainer: {
-      marginTop: 20,
-    },
-    backButton: {
-      backgroundColor: '#777777',
-      borderRadius: 5,
-      padding: 10,
-    },
-    backButtonText: {
-      color: '#ffffff',
-      textAlign: 'center',
-    },
-  });
   
   export default AddUser;
   

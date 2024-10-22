@@ -65,8 +65,8 @@ const LoginStyle = StyleSheet.create({
         alignItems: 'center',
       },
       registerButtonText: {
-        color: '#555',
-        fontSize: 16,
+        color: '#40E0D0',
+        fontSize: 18,
       },
 })
 
