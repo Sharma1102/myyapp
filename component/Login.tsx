@@ -169,13 +169,12 @@ const Login: React.FC<LoginProps> = ({ navigation }) => {
   const [errors, setErrors] = useState<{ name?: string; password?: string }>({});
 
   const validateLogin = async () => {
-<<<<<<< HEAD
+
     const newErrors: {name?: string; password?: string} = {};
     if (!name.trim()) newErrors.name = 'Name is required.'  ;
-=======
-    const newErrors: { name?: string; password?: string } = {};
-    if (!name.trim()) newErrors.name = 'Name is required.';
->>>>>>> 6f19b489ef0a2d8d095aa999331828af1d0e32e5
+
+    
+
     if (!password) newErrors.password = 'Password is required.';
 
     setErrors(newErrors);
