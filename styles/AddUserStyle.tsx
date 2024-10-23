@@ -39,7 +39,7 @@ const AddUserStyle = StyleSheet.create ({
     alignItems: 'center',
     marginTop: 16,
     marginBottom: 12,
-    width: '100%', // Full width button
+    width: 330, // Full width button
   },
   buttonText: { color: '#ffffff', fontWeight: 'bold', fontSize: 16 },
   error: { color: 'red', fontSize: 14, marginBottom: 12 },

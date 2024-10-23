@@ -240,7 +240,6 @@ const Login: React.FC<LoginProps> = ({ navigation }) => {
           <TouchableOpacity style={LoginStyle.button} onPress={validateLogin}>
             <Text style={LoginStyle.buttonText}>Login</Text>
           </TouchableOpacity>
-
           <TouchableOpacity
             style={LoginStyle.registerButton}
             onPress={() => navigation.navigate('Registration')}
