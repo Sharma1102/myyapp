@@ -21,7 +21,7 @@ const Login: React.FC<LoginProps> = ({navigation}) => {
 
   const validateLogin = async () => {
     const newErrors: {name?: string; password?: string} = {};
-    if (!name.trim()) newErrors.name = 'Name is required.';
+    if (!name.trim()) newErrors.name = 'Name is required.'  ;
     if (!password) newErrors.password = 'Password is required.';
 
     setErrors(newErrors);
