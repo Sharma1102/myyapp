@@ -30,21 +30,28 @@
 
 
 import React from 'react';
-<<<<<<< HEAD
-import { SafeAreaView, StyleSheet } from 'react-native';
+import { SafeAreaView } from 'react-native';
 import MainNavigator from './component/MainNavigator';
-=======
-import AddUser from './component/AddUser';
->>>>>>> 6f19b489ef0a2d8d095aa999331828af1d0e32e5
 
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import Login from './component/Login';
+import AddUser from './component/AddUser';
+import Registration from './component/Registration';
+import Data from './component/Data';
+import Home from './component/Home';
+import FileUpload from './component/FileUpload';
+import FileDownload from './component/FileDownload';
+
+const Stack = createStackNavigator();
 
 const App: React.FC = () => {
   return (
-<<<<<<< HEAD
-    <SafeAreaView style={styles.container}>
+    <>
+    <SafeAreaView >
       <MainNavigator />
     </SafeAreaView>
-=======
+
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Login">
         <Stack.Screen name="Login" component={Login} />
@@ -52,16 +59,15 @@ const App: React.FC = () => {
         <Stack.Screen name="Data" component={Data} />
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="AddUser" component={AddUser} />
+        <Stack.Screen name="FileUpload" component={FileUpload} />
+        <Stack.Screen name="FileDownload" component={FileDownload} />
       </Stack.Navigator>
     </NavigationContainer>
->>>>>>> 6f19b489ef0a2d8d095aa999331828af1d0e32e5
+    </>
   );
 };
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
+
+
 
 export default App;
