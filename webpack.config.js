@@ -29,7 +29,7 @@ module.exports = (env, argv) => {
                 presets: ['@babel/preset-react', '@babel/preset-typescript'],
               },
             },
-            'ts-loader',
+            'ts-loader', // Using ts-loader for TypeScript files
           ],
           exclude: /node_modules/,
         },
@@ -42,34 +42,30 @@ module.exports = (env, argv) => {
         },
         {
           test: /\.css$/i,
-          use: ['style-loader', 'css-loader'],
+          use: ['style-loader', 'css-loader'], // Loaders for CSS files
         },
         {
-          test: /\.(gif|jpe?g|png|webp)$/,
+          test: /\.(gif|jpe?g|png|webp)$/i,
           use: {
             loader: 'url-loader',
             options: {
-              name: '[name].[ext]',
+              limit: 8192, // Inline files smaller than 8KB
+              name: '[name].[hash].[ext]', // Output file naming
               esModule: false,
             },
           },
         },
         {
-          test: /\.(woff(2)?|ttf|eot)$/,
+          test: /\.(woff(2)?|ttf|eot)$/i,
           use: [
             {
               loader: 'file-loader',
               options: {
-                name: '[name].[ext]',
-                outputPath: 'config/custom/fonts',
+                name: '[name].[hash].[ext]',
+                outputPath: 'config/custom/fonts', // Output directory for fonts
               },
             },
           ],
-        },
-        {
-          test: /\.(ts|tsx)$/,
-          use: 'ts-loader',
-          exclude: /node_modules/,
         },
       ],
     },
@@ -78,7 +74,7 @@ module.exports = (env, argv) => {
         template: path.resolve(__dirname, 'index.html'), // Path to your HTML template
       }),
       new webpack.DefinePlugin({
-        __DEV__: JSON.stringify(devMode),
+        __DEV__: JSON.stringify(devMode), // Define development mode
       }),
     ],
     devServer: {

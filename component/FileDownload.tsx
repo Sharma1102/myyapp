@@ -14,7 +14,7 @@ import RNFetchBlob from 'rn-fetch-blob';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 // import FileUpload from './FIleUpload'; // Ensure the FileUpload component is linked properly
 
-const Home: React.FC = () => {
+const FileDwonload: React.FC = () => {
   const [fileURL, setFileURL] = useState<string>(''); // State to store the input file URL
   const [uploadedFiles, setUploadedFiles] = useState<{ name: string; url: string }[]>([]); // State to hold uploaded files
 
@@ -198,7 +198,7 @@ const Home: React.FC = () => {
   );
 };
 
-export default Home;
+export default FileDwonload;
 
 const styles = StyleSheet.create({
   container: {

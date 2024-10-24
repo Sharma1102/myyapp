@@ -33,6 +33,7 @@ import React from 'react';
 import { SafeAreaView } from 'react-native';
 import MainNavigator from './component/MainNavigator';
  
+
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Login from './component/Login';
@@ -42,16 +43,18 @@ import Data from './component/Data';
 import Home from './component/Home';
 import FileUpload from './component/FileUpload';
 import FileDownload from './component/FileDownload';
+
  
+
 const Stack = createStackNavigator();
- 
+
+
 const App: React.FC = () => {
   return (
     <>
     <SafeAreaView >
       <MainNavigator />
     </SafeAreaView>
- 
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Login">
         <Stack.Screen name="Login" component={Login} />
@@ -66,8 +69,10 @@ const App: React.FC = () => {
     </>
   );
 };
+
  
  
  
  
 export default App; 
+
