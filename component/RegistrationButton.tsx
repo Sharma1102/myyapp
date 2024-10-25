@@ -16,12 +16,12 @@ const RegistrationButton: React.FC<RegistrationButtonProps> = ({ title, onPress 
 
 const styles = StyleSheet.create({
     button: {
-        backgroundColor: 'blue', // Change to your preferred color
-        padding: 12,
+        backgroundColor: '#007BFF', // Change to your preferred color
+        padding: 10,
+        paddingBottom:10,
         borderRadius: 5,
-        alignItems: 'center',
         marginTop: 10,
-    },
+        width: '100%',    },
     buttonText: {
         color: 'white',
         fontWeight: '500',
